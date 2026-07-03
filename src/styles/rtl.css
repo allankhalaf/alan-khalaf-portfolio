@@ -1,0 +1,73 @@
+/* RTL Support */
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl .main-nav {
+  direction: rtl;
+}
+
+body.rtl .timeline::before {
+  left: auto;
+  right: 18px;
+}
+
+body.rtl .timeline-item {
+  padding-left: 0;
+  padding-right: 52px;
+}
+
+body.rtl .timeline-dot {
+  left: auto;
+  right: 9px;
+}
+
+body.rtl .acquired-box li,
+body.rtl .timeline-content li,
+body.rtl .focus-list li {
+  padding-left: 0;
+  padding-right: 22px;
+}
+
+body.rtl .acquired-box li::before,
+body.rtl .timeline-content li::before,
+body.rtl .focus-list li::before {
+  left: auto;
+  right: 0;
+}
+
+body.rtl .contact-quick li,
+body.rtl .contact-link,
+body.rtl .mini-info-card,
+body.rtl .service-item,
+body.rtl .skill-box,
+body.rtl .profile-card {
+  flex-direction: row-reverse;
+}
+
+body.rtl .timeline-top,
+body.rtl .footer-content,
+body.rtl .nav-wrapper {
+  direction: rtl;
+}
+
+body.rtl .hero-actions,
+body.rtl .hero-tags,
+body.rtl .project-links,
+body.rtl .project-tech,
+body.rtl .skill-pills,
+body.rtl .contact-list {
+  justify-content: flex-start;
+}
+
+body.rtl .floating-btn {
+  right: auto;
+  left: 24px;
+}
+
+@media (max-width: 640px) {
+  body.rtl .floating-btn {
+    left: 16px;
+  }
+}

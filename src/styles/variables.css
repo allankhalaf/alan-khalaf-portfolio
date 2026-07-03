@@ -1,0 +1,18 @@
+/* CSS Variables */
+:root {
+  --bg: #0b1220;
+  --bg-soft: #121a2b;
+  --bg-card: rgba(18, 26, 43, 0.72);
+  --bg-card-solid: #111a2d;
+  --bg-card-2: #16233c;
+  --text: #f3f6fb;
+  --text-soft: #b9c4d6;
+  --text-muted: #8ea0bb;
+  --primary: #6ea8fe;
+  --primary-strong: #4f8df0;
+  --secondary: #30c7b5;
+  --accent: #f6c56f;
+  --danger: #ff6b6b;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+}

@@ -1,0 +1,117 @@
+/* GSAP Animation Classes */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text reveal animation */
+.text-reveal-word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.text-reveal-word span {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+/* Stagger card animation */
+.stagger-card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+/* Timeline animation */
+.timeline-line {
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.timeline-dot {
+  transform: scale(0);
+}
+
+/* Skill bar animation */
+.skill-bar-fill {
+  width: 0%;
+  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 3D Card tilt */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 40px rgba(110, 168, 254, 0.3);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 40px rgba(48, 199, 181, 0.3);
+}
+
+/* Particle canvas */
+.particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(110, 168, 254, 0.8), transparent);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.custom-cursor.hovering {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(48, 199, 181, 0.6), transparent);
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: #0b1220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.preloader-logo {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6ea8fe, #30c7b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: preloaderPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes preloaderPulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
