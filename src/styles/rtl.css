@@ -65,7 +65,42 @@ body.rtl .floating-btn {
   right: auto;
   left: 24px;
 }
+/* ============================================
+   LTR Values Fix — Phone, Email, GitHub, URLs
+   ============================================ */
 
+.ltr-value {
+  direction: ltr !important;
+  unicode-bidi: embed;
+  text-align: left;
+}
+
+/* في الوضع العربي RTL */
+body.rtl .ltr-value,
+[dir="rtl"] .ltr-value {
+  direction: ltr !important;
+  unicode-bidi: embed;
+  text-align: left;
+}
+
+/* تأكد من عدم انعكاس الأرقام في أي سياق */
+.ltr-value,
+a[href^="tel:"],
+a[href^="mailto:"],
+a[href*="github.com"],
+a[href*="wa.me"] {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* للروابط المباشرة في RTL */
+body.rtl a[href^="tel:"],
+body.rtl a[href^="mailto:"],
+body.rtl a[href*="wa.me"],
+body.rtl a[href*="github.com"] {
+  direction: ltr;
+  unicode-bidi: embed;
+}
 @media (max-width: 640px) {
   body.rtl .floating-btn {
     left: 16px;

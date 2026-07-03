@@ -139,6 +139,9 @@ const HeroSection = () => {
 
               <div className="space-y-2 pt-2 border-t border-white/10">
                 <a href="tel:+963988317684" className="flex items-center gap-2 text-sm text-text-soft hover:text-primary transition-colors">
+                  <span dir="ltr" className="ltr-number">
+
+</span>
                   <Phone size={14} />
                   {t('hero_contact_phone')}
                 </a>
