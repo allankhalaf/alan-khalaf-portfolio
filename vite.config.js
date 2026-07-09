@@ -4,6 +4,9 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+
+  base: '/alan-khalaf-portfolio/',
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -15,10 +18,12 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
+
   server: {
     port: 3000,
     open: true,
   },
+
   build: {
     outDir: 'dist',
     sourcemap: true,
