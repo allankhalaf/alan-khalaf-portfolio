@@ -187,19 +187,12 @@ const HeroSection = () => {
 
             {/* Image container */}
             <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-2 border-primary/30 backdrop-blur-sm bg-bg-secondary/50 shadow-2xl shadow-primary/10 group cursor-pointer transition-transform duration-500 hover:scale-105">
-              <img 
-                src="/images/profile.jpg" 
-                alt={isRTL ? 'ألان خلف' : 'Alan Khalaf'}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                onError={(e) => {
-                  e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWEwMDM3Ii8+PHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJDYWlybyIgZm9udC1zaXplPSI3MCIgZmlsbD0iIzZlYThmZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+8J+OjTwvdGV4dD48L3N2Zz4=';
-                }}
-              />
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                <span className="text-white text-body-xs font-semibold">{t('view_profile') || 'View Profile'}</span>
-              </div>
-            </div>
+<img 
+  src={`${import.meta.env.BASE_URL}profile.png`}
+  alt={isRTL ? 'ألان خلف' : 'Alan Khalaf'}
+  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+/>
+</div>
 
             {/* Status Badge */}
             <div className={`absolute -bottom-1 ${isRTL ? '-left-2' : '-right-2'} flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-secondary/90 border border-green-500/30 backdrop-blur-md shadow-lg transition-all duration-300 hover:shadow-green-500/20 hover:border-green-500/50`}>
