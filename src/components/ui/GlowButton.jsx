@@ -15,7 +15,7 @@ const GlowButton = ({
   icon: Icon,
   ...props 
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full font-semibold transition-all duration-300';
+  const baseStyles = 'inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-display font-semibold text-sm tracking-wide transition-all duration-300';
 
   const variants = {
     primary: 'btn-primary',

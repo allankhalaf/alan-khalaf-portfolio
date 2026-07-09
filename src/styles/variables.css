@@ -1,18 +1,75 @@
-/* CSS Variables */
-:root {
-  --bg: #0b1220;
-  --bg-soft: #121a2b;
-  --bg-card: rgba(18, 26, 43, 0.72);
-  --bg-card-solid: #111a2d;
-  --bg-card-2: #16233c;
-  --text: #f3f6fb;
-  --text-soft: #b9c4d6;
-  --text-muted: #8ea0bb;
-  --primary: #6ea8fe;
-  --primary-strong: #4f8df0;
-  --secondary: #30c7b5;
-  --accent: #f6c56f;
-  --danger: #ff6b6b;
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.16);
+/* RTL Support */
+body.rtl,
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-arabic);
+}
+
+body.rtl .main-nav,
+[dir="rtl"] .main-nav {
+  direction: rtl;
+}
+
+/* Header RTL fixes */
+body.rtl header nav,
+[dir="rtl"] header nav {
+  direction: rtl;
+}
+
+body.rtl header .flex.items-center.justify-between,
+[dir="rtl"] header .flex.items-center.justify-between {
+  direction: rtl;
+}
+
+/* Footer RTL fixes */
+body.rtl footer,
+[dir="rtl"] footer {
+  direction: rtl;
+  text-align: right;
+}
+
+body.rtl footer .grid,
+[dir="rtl"] footer .grid {
+  direction: rtl;
+}
+
+/* Ensure proper text alignment for mixed content */
+body.rtl .ltr-value,
+[dir="rtl"] .ltr-value {
+  direction: ltr !important;
+  unicode-bidi: embed;
+  text-align: left;
+  display: inline-block;
+}
+
+/* Fix for buttons and interactive elements in RTL */
+body.rtl button,
+[dir="rtl"] button,
+body.rtl a,
+[dir="rtl"] a {
+  text-align: right;
+}
+
+/* Mobile menu RTL */
+body.rtl .mobile-menu,
+[dir="rtl"] .mobile-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Ensure logo and brand don't break in RTL */
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+/* Fix flex direction for RTL */
+body.rtl .flex-row,
+[dir="rtl"] .flex-row {
+  /* Keep default, override where needed */
+}
+
+body.rtl .flex-row-reverse,
+[dir="rtl"] .flex-row-reverse {
+  /* Already handled by Tailwind */
 }

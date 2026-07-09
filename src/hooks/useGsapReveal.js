@@ -62,7 +62,6 @@ export const useGsapStagger = (options = {}) => {
     if (!el) return;
 
     const ctx = gsap.context(() => {
-      // Get all direct children instead of using invalid selector
       const cards = el.children;
       if (cards.length === 0) return;
 

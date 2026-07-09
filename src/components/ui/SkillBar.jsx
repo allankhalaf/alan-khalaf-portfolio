@@ -20,19 +20,21 @@ const SkillBar = ({ name, level, icon, delay = 0 }) => {
   }, [level, delay]);
 
   return (
-    <div ref={ref} className="space-y-2">
+    <div ref={ref} className="space-y-3 group">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {icon && <i className={icon} />}
-          <span className="text-sm font-medium text-text">{name}</span>
+        <div className="flex items-center gap-3">
+          {icon && <i className={`${icon} text-primary text-lg`} />}
+          <span className="text-body font-display font-semibold text-text">{name}</span>
         </div>
-        <span className="text-sm text-text-muted">{level}%</span>
+        <span className="text-body-sm font-display font-bold text-primary">{level}%</span>
       </div>
-      <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+      <div className="h-2.5 bg-white/5 rounded-full overflow-hidden">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-1000 ease-out"
+          className="h-full rounded-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-1000 ease-out relative"
           style={{ width: `${width}%` }}
-        />
+        >
+          <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse" />
+        </div>
       </div>
     </div>
   );

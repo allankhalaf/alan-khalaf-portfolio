@@ -8,7 +8,7 @@ export const projects = [
     tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
     liveUrl: 'https://allankhalaf.github.io/HimaTechNo-Store/',
     githubUrl: 'https://github.com/allankhalaf/HimaTechNo-Store',
-    featured: true,
+    featured: false,
   },
   {
     id: 'pizza',
@@ -52,6 +52,17 @@ export const projects = [
     tech: ['HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://allankhalaf.github.io/ecommerce/',
     githubUrl: 'https://github.com/allankhalaf/ecommerce',
+    featured: false,
+  },
+      {
+    id: 'youtube',
+    title: 'Youtube-Frontend',
+    tagKey: 'project_6_tag',
+    textKey: 'project_6_text',
+    image: './images/projects/youtube-frontend.jpg',
+    tech: ['JavaScript', 'HTML', 'CSS', 'Vite', 'Responsive Design'],
+    liveUrl: 'https://allankhalaf.github.io/youtube-frontend/',
+    githubUrl: 'https://github.com/allankhalaf/youtube-frontend',
     featured: false,
   },
 ];

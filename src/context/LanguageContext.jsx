@@ -6,28 +6,31 @@ const LanguageContext = createContext();
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('portfolio-lang') || 'ar';
+      return localStorage.getItem('portfolio-lang') || 'en';
     }
-    return 'ar';
+    return 'en';
   });
 
-  const [direction, setDirection] = useState('rtl');
+  const [direction, setDirection] = useState('ltr');
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const html = document.documentElement;
     const body = document.body;
+    const dir = language === 'ar' ? 'rtl' : 'ltr';
 
     html.setAttribute('lang', language);
-    html.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+    html.setAttribute('dir', dir);
 
     body.classList.remove('rtl', 'ltr');
-    body.classList.add(language === 'ar' ? 'rtl' : 'ltr');
+    body.classList.add(dir);
 
-    setDirection(language === 'ar' ? 'rtl' : 'ltr');
+    setDirection(dir);
 
-    document.title = (translations[language]?.hero_title || 'Alan Khalaf') + ' | Portfolio';
+    // Safe title update
+    const titleText = translations[language]?.hero_title || 'Alan Khalaf';
+    document.title = `${titleText} | Portfolio`;
   }, [language]);
 
   const toggleLanguage = useCallback(() => {
@@ -47,8 +50,15 @@ export const LanguageProvider = ({ children }) => {
     }
   }, []);
 
+  // Safe translation function with fallback
   const t = useCallback((key) => {
-    return translations[language]?.[key] || key;
+    if (!key) return '';
+    const translation = translations[language]?.[key];
+    if (translation === undefined) {
+      console.warn(`Translation missing for key: "${key}" in language: "${language}"`);
+      return key;
+    }
+    return translation;
   }, [language]);
 
   const value = {

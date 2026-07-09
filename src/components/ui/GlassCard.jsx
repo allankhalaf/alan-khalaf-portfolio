@@ -10,8 +10,8 @@ const GlassCard = ({ children, className, hover = true, glow = false }) => {
   return (
     <div
       className={cn(
-        'glass-card p-6 transition-all duration-500',
-        hover && 'hover:-translate-y-2 hover:shadow-lg hover:border-line-strong',
+        'glass-card p-8 transition-all duration-500',
+        hover && 'hover:-translate-y-2 hover:shadow-card-hover hover:border-line-strong',
         glow && 'glow-border',
         className
       )}
