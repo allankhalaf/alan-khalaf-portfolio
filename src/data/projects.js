@@ -76,6 +76,17 @@ export const projects = [
     githubUrl: 'https://github.com/allankhalaf/damascus-medical-dashboard',
     featured: false,
   },
+        {
+    id: 'TaskFlow',
+    title: 'TaskFlow Damascus Software Solutions',
+    tagKey: 'project_8_tag',
+    textKey: 'project_8_text',
+    image: './images/projects/TaskFlow-dashboard.jpg',
+    tech: ['JavaScript', 'TanStack Query', 'Tailwind CSS', 'Vite', 'React 19', 'Zustand', 'Lucide React'],
+    liveUrl: 'https://allankhalaf.github.io/TaskFlow/',
+    githubUrl: 'https://github.com/allankhalaf/TaskFlow',
+    featured: false,
+  },
 ];
 
 export const landingPages = [

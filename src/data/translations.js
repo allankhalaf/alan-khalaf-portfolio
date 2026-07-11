@@ -112,7 +112,7 @@ const translations = {
     live_demo: "Live Demo",
     source_code: "Source Code",
 
-    // Projects 4 & 5 & 6
+    // Projects 4 & 5 & 6 & 7 & 8
     project_4_tag: "Tourism",
     project_4_text: "Hima Tourism is a responsive Arabic tourism and travel booking website focused on showcasing Syrian domestic trips, safari experiences, camping adventures, and historical destinations through an engaging and user-friendly interface.",
     project_5_tag: "E-commerce",
@@ -121,6 +121,8 @@ const translations = {
     project_6_text: "A front-end video platform interface inspired by YouTube, developed using HTML5, CSS3, and Bootstrap 5 RTL with full support for Arabic language and right-to-left (RTL) layout.",
     project_7_tag: "medical-dashboard",
     project_7_text: "A responsive medical dashboard built with React and Tailwind CSS, designed to provide healthcare professionals with a comprehensive overview of patient data and clinical metrics.",
+    project_8_tag: "TaskFlow",
+    project_8_text: "A comprehensive web application for task and project management, built with React 19 and TanStack Query, offering a modern and responsive user interface to enhance team productivity.",
 
     // Experience
     experience_title: "My Experience",
@@ -341,8 +343,11 @@ const translations = {
     project_5_text: "متجر إلكتروني Front-End بواجهة متجاوبة وحديثة يتيح تصفح المنتجات، اختيار المقاسات والألوان، إدارة السلة، وتحديث الأسعار بشكل ديناميكي، مع صفحة Checkout تدعم تغيير حقول الدفع حسب الطريقة المختارة. تم تطويره باستخدام HTML وBootstrap وSass وJavaScript مع Webpack لإدارة وبناء المشروع.",
     project_6_tag: "واجهة مستخدم تشبه يوتيوب",
     project_6_text: "واجهة أمامية لمنصة فيديوهات عربية مستوحاة من تصميم YouTube، تم تطويرها باستخدام HTML5 و CSS3 و Bootstrap 5 مع دعم كامل للغة العربية واتجاه الكتابة من اليمين إلى اليسار (RTL).",
-    project_7_tag: "لوحة تحكم طبية",
-    project_7_text: "لوحة تحكم طبية متجاوبة مبنية باستخدام React و Tailwind CSS، وهي مصممة لتوفير نظرة شاملة لبيانات المرضى ومقاييس الرعاية الصحية للمختصين الطبيين.",
+      project_7_tag: "لوحة تحكم طبية",
+      project_7_text: "لوحة تحكم طبية متجاوبة مبنية باستخدام React و Tailwind CSS، وهي مصممة لتوفير نظرة شاملة لبيانات المرضى ومقاييس الرعاية الصحية للمختصين الطبيين.",
+    project_8_tag: "TaskFlow",
+    project_8_text: "تطبيق ويب متكامل لإدارة المهام والمشاريع، مبني باستخدام React 19 و TanStack Query و Tailwind CSS، ويقدم واجهة مستخدم حديثة ومتجاوبة لتحسين إنتاجية الفريق.",
+
     // Experience
     experience_title: "خبراتي",
     experience_subtitle: "خبراتي مع المنظمات الدولية والإنسانية",
