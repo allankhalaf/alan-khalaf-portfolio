@@ -119,6 +119,8 @@ const translations = {
     project_5_text: "A responsive front-end e-commerce store featuring product browsing, size and color selection, cart management, dynamic price updates, and a checkout page with conditional payment form handling. Built with HTML, Bootstrap, Sass, JavaScript, and Webpack.",
     project_6_tag: "youtube-frontend",
     project_6_text: "A front-end video platform interface inspired by YouTube, developed using HTML5, CSS3, and Bootstrap 5 RTL with full support for Arabic language and right-to-left (RTL) layout.",
+    project_7_tag: "medical-dashboard",
+    project_7_text: "A responsive medical dashboard built with React and Tailwind CSS, designed to provide healthcare professionals with a comprehensive overview of patient data and clinical metrics.",
 
     // Experience
     experience_title: "My Experience",
@@ -339,7 +341,8 @@ const translations = {
     project_5_text: "متجر إلكتروني Front-End بواجهة متجاوبة وحديثة يتيح تصفح المنتجات، اختيار المقاسات والألوان، إدارة السلة، وتحديث الأسعار بشكل ديناميكي، مع صفحة Checkout تدعم تغيير حقول الدفع حسب الطريقة المختارة. تم تطويره باستخدام HTML وBootstrap وSass وJavaScript مع Webpack لإدارة وبناء المشروع.",
     project_6_tag: "واجهة مستخدم تشبه يوتيوب",
     project_6_text: "واجهة أمامية لمنصة فيديوهات عربية مستوحاة من تصميم YouTube، تم تطويرها باستخدام HTML5 و CSS3 و Bootstrap 5 مع دعم كامل للغة العربية واتجاه الكتابة من اليمين إلى اليسار (RTL).",
-
+    project_7_tag: "لوحة تحكم طبية",
+    project_7_text: "لوحة تحكم طبية متجاوبة مبنية باستخدام React و Tailwind CSS، وهي مصممة لتوفير نظرة شاملة لبيانات المرضى ومقاييس الرعاية الصحية للمختصين الطبيين.",
     // Experience
     experience_title: "خبراتي",
     experience_subtitle: "خبراتي مع المنظمات الدولية والإنسانية",

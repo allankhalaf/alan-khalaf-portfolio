@@ -65,6 +65,17 @@ export const projects = [
     githubUrl: 'https://github.com/allankhalaf/youtube-frontend',
     featured: false,
   },
+      {
+    id: 'medical-dashboard',
+    title: 'Damascus Medical Dashboard',
+    tagKey: 'project_7_tag',
+    textKey: 'project_7_text',
+    image: './images/projects/medical-dashboard.jpg',
+    tech: ['JavaScript', 'HTML5', 'Tailwind CSS', 'Vite', 'React', 'Zustand', 'Responsive Design'],
+    liveUrl: 'https://allankhalaf.github.io/damascus-medical-dashboard/',
+    githubUrl: 'https://github.com/allankhalaf/damascus-medical-dashboard',
+    featured: false,
+  },
 ];
 
 export const landingPages = [
