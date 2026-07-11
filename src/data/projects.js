@@ -23,7 +23,7 @@ export const projects = [
   },
   {
     id: 'fashion',
-    title: 'Hima Fashion Store',
+    title: 'Hima Fashion',
     tagKey: 'project_3_tag',
     textKey: 'project_3_text',
     image: './images/projects/hima-fashion.jpg',
@@ -67,7 +67,7 @@ export const projects = [
   },
       {
     id: 'medical-dashboard',
-    title: 'Damascus Medical Dashboard',
+    title: 'Damascus M-Dashboard',
     tagKey: 'project_7_tag',
     textKey: 'project_7_text',
     image: './images/projects/medical-dashboard.jpg',
@@ -78,7 +78,7 @@ export const projects = [
   },
         {
     id: 'TaskFlow',
-    title: 'TaskFlow Damascus Software Solutions',
+    title: 'TaskFlow DSS',
     tagKey: 'project_8_tag',
     textKey: 'project_8_text',
     image: './images/projects/TaskFlow-dashboard.jpg',
