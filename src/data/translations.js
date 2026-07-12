@@ -212,6 +212,18 @@ const translations = {
     footer_copyright: "Crafted with care",
     back_to_top: "Back to Top",
     footer_description: "Front-end Developer | Humanitarian | Professional Translator",
+    footer_services: "Services",
+    service_web: "Web Development",
+    service_ui: "UI/UX Design",
+    service_responsive: "Responsive Design",
+    service_seo: "SEO Optimization",
+    footer_contact: "Contact",
+    footer_location: "Al Hassakah, Syria",
+    footer_links: "Quick Links",
+    footer_rights: "All rights reserved.",
+    footer_rights_short: "All rights reserved.",
+    footer_made: "Made with",
+    footer_by: "by",
 
     // Phone number
     phone_number: "+963 988 317 684",
@@ -269,7 +281,7 @@ const translations = {
     dev_kicker: "ما اعمله",
     dev_title: "خدمات التطوير",
     dev_text: "أبني تطبيقات ويب حديثة بشيفرة نظيفة، تصميم متجاوب، وأداء مثالي.",
-    dev_services_title: "خدمات التطوير",
+    dev_services_title: "",
     dev_service_1_title: "تطوير الويب",
     dev_service_1_text: "بناء مواقع وتطبيقات ويب متجاوبة باستخدام HTML5 وCSS3 وJavaScript وReact.",
     dev_service_2_title: "تصميم واجهة المستخدم",
@@ -343,8 +355,8 @@ const translations = {
     project_5_text: "متجر إلكتروني Front-End بواجهة متجاوبة وحديثة يتيح تصفح المنتجات، اختيار المقاسات والألوان، إدارة السلة، وتحديث الأسعار بشكل ديناميكي، مع صفحة Checkout تدعم تغيير حقول الدفع حسب الطريقة المختارة. تم تطويره باستخدام HTML وBootstrap وSass وJavaScript مع Webpack لإدارة وبناء المشروع.",
     project_6_tag: "واجهة مستخدم تشبه يوتيوب",
     project_6_text: "واجهة أمامية لمنصة فيديوهات عربية مستوحاة من تصميم YouTube، تم تطويرها باستخدام HTML5 و CSS3 و Bootstrap 5 مع دعم كامل للغة العربية واتجاه الكتابة من اليمين إلى اليسار (RTL).",
-      project_7_tag: "لوحة تحكم طبية",
-      project_7_text: "لوحة تحكم طبية متجاوبة مبنية باستخدام React و Tailwind CSS، وهي مصممة لتوفير نظرة شاملة لبيانات المرضى ومقاييس الرعاية الصحية للمختصين الطبيين.",
+    project_7_tag: "لوحة تحكم طبية",
+    project_7_text: "لوحة تحكم طبية متجاوبة مبنية باستخدام React و Tailwind CSS، وهي مصممة لتوفير نظرة شاملة لبيانات المرضى ومقاييس الرعاية الصحية للمختصين الطبيين.",
     project_8_tag: "TaskFlow",
     project_8_text: "تطبيق ويب متكامل لإدارة المهام والمشاريع، مبني باستخدام React 19 و TanStack Query و Tailwind CSS، ويقدم واجهة مستخدم حديثة ومتجاوبة لتحسين إنتاجية الفريق.",
 
@@ -432,11 +444,23 @@ const translations = {
     footer_copyright: "صنع بكل حب",
     back_to_top: "العودة للأعلى",
     footer_description: "مطور واجهات أمامية | عامل إنساني | مترجم محترف",
+    footer_services: "الخدمات",
+    service_web: "تطوير الويب",
+    service_ui: "تصميم UI/UX",
+    service_responsive: "تصميم متجاوب",
+    service_seo: "تحسين SEO",
+    footer_contact: "تواصل معي",
+    footer_location: "دمشق، سوريا",
+    footer_links: "روابط سريعة",
+    footer_rights: "جميع الحقوق محفوظة.",
+    footer_rights_short: "جميع الحقوق محفوظة.",
+    footer_made: "صُنع بـ",
+    footer_by: "بواسطة",
 
     // Phone number
     phone_number: "+963 988 317 684",
 
-    // CV Download - المفاتيح المفقودة
+    // CV Download
     download_cv: "تحميل السيرة الذاتية",
     available: "متاح",
   }

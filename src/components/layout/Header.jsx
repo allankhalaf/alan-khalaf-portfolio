@@ -1,136 +1,151 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@context/LanguageContext';
-import { useActiveSection } from '@hooks/useScrollProgress';
-import { Menu, X } from 'lucide-react';
-import LanguageSwitcher from '@components/ui/LanguageSwitcher';
-
-const navItems = [
-  { id: 'about', key: 'nav_about' },
-  { id: 'services', key: 'nav_services' },
-  { id: 'experience', key: 'nav_experience' },
-  { id: 'skills', key: 'nav_skills' },
-  { id: 'projects', key: 'nav_projects' },
-  { id: 'contact', key: 'nav_contact' },
-];
+import { Menu, X, Globe, ArrowRight } from 'lucide-react';
 
 const Header = () => {
-  const { t, language, direction } = useLanguage();
-  const activeSection = useActiveSection(navItems.map(item => item.id), 300);
+  const { t, toggleLanguage, dir, language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const isRTL = direction === 'rtl';
+  const isRTL = dir === 'rtl';
+  const isArabic = language === 'ar';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+  }, [isMobileMenuOpen]);
+
+  const navLinks = [
+    { href: '#hero', label: t('nav_home') || 'Home' },
+    { href: '#about', label: t('nav_about') || 'About' },
+    { href: '#experience', label: t('nav_experience') || 'Experience' },
+    { href: '#projects', label: t('nav_projects') || 'Projects' },
+    { href: '#contact', label: t('nav_contact') || 'Contact' },
+  ];
+
+  const scrollToSection = (href) => {
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
     }
   };
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-bg-primary/80 backdrop-blur-2xl border-b border-line/50 shadow-lg shadow-black/20' 
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-bg-primary/95 backdrop-blur-xl shadow-lg shadow-black/10'
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-20" dir={isRTL ? 'rtl' : 'ltr'}>
+          <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <a 
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="flex items-center gap-3 group shrink-0"
-            >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-glow-primary group-hover:scale-110 transition-transform duration-300">
-                <span className="text-bg-primary font-display font-bold text-lg">A</span>
+            <a href="#hero" className="flex items-center gap-2 sm:gap-3 shrink-0">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <span className="text-white font-bold text-sm sm:text-base">A</span>
               </div>
-              <span className="font-display font-bold text-xl text-text group-hover:text-primary transition-colors duration-300 hidden sm:block whitespace-nowrap">
-                {isRTL ? 'الان' : 'Alan'}
+              <span className="text-lg sm:text-xl font-bold text-text hidden sm:block">
+                Alan Khalaf
               </span>
             </a>
 
-            {/* Desktop Navigation - Center */}
-            <nav className="hidden lg:flex items-center gap-1 mx-auto">
-              {navItems.map((item) => (
+            {/* Desktop Nav - Center */}
+            <nav className="hidden lg:flex items-center gap-1">
+              {navLinks.map((link) => (
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 py-2 rounded-xl text-body-sm font-display font-medium transition-all duration-300 whitespace-nowrap ${
-                    activeSection === item.id
-                      ? 'text-primary bg-primary/10'
-                      : 'text-text-soft hover:text-text hover:bg-white/5'
-                  }`}
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="px-3 py-2 text-sm font-medium text-text-soft hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
                 >
-                  {t(item.key)}
-                  {activeSection === item.id && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
-                  )}
+                  {link.label}
                 </button>
               ))}
             </nav>
 
-            {/* Right Side - Language Switcher */}
-            <div className="flex items-center gap-4 shrink-0">
-              <LanguageSwitcher />
+            {/* Right Side - Language + Mobile Menu ONLY */}
+            <div className="flex items-center gap-2">
+              {/* Language Switcher - Shows target language */}
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-text-soft hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="hidden sm:inline">
+                  {isArabic ? 'English' : 'العربية'}
+                </span>
+              </button>
 
+              {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden w-10 h-10 rounded-xl bg-white/5 border border-line flex items-center justify-center text-text hover:bg-white/10 transition-all duration-300"
-                aria-label={isMobileMenuOpen ? t('close_menu') : t('open_menu')}
+                className="lg:hidden p-2 text-text-soft hover:text-primary transition-colors rounded-lg hover:bg-primary/5"
+                aria-label="Toggle menu"
               >
-                {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      <div 
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity lg:hidden ${
+          isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Menu Panel */}
+      <div
+        className={`fixed top-0 ${isRTL ? 'right-0' : 'left-0'} h-full w-[280px] max-w-[80vw] z-50 bg-bg-primary border-${isRTL ? 'r' : 'l'} border-line shadow-2xl transform transition-transform duration-300 ease-out lg:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : isRTL ? 'translate-x-full' : '-translate-x-full'
         }`}
       >
-        <div className="absolute inset-0 bg-bg-primary/95 backdrop-blur-2xl" onClick={() => setIsMobileMenuOpen(false)} />
-        <nav 
-          dir={isRTL ? 'rtl' : 'ltr'}
-          className={`absolute top-24 left-4 right-4 bg-bg-card-solid border border-line rounded-3xl p-6 shadow-2xl transition-all duration-500 ${
-            isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
-          }`}
-        >
-          <div className="flex flex-col gap-2">
-            {navItems.map((item, index) => (
+        <div className="flex flex-col h-full p-6">
+          {/* Mobile Menu Header */}
+          <div className="flex items-center justify-between mb-8">
+            <span className="text-xl font-bold text-text">Alan Khalaf</span>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 text-text-soft hover:text-primary rounded-lg hover:bg-primary/5"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Mobile Nav Links */}
+          <nav className="flex-1 flex flex-col gap-1">
+            {navLinks.map((link) => (
               <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`w-full px-5 py-4 rounded-2xl text-body font-display font-medium transition-all duration-300 text-start ${
-                  activeSection === item.id
-                    ? 'text-primary bg-primary/10 border border-primary/20'
-                    : 'text-text-soft hover:text-text hover:bg-white/5'
-                }`}
-                style={{ animationDelay: `${index * 50}ms` }}
+                key={link.href}
+                onClick={() => scrollToSection(link.href)}
+                className="w-full px-4 py-3 text-left text-text-soft hover:text-primary hover:bg-primary/5 rounded-xl transition-colors text-base font-medium"
+                style={{ textAlign: isRTL ? 'right' : 'left' }}
               >
-                <span className="flex items-center justify-between">
-                  {t(item.key)}
-                  {activeSection === item.id && (
-                    <span className="w-2 h-2 rounded-full bg-primary shadow-glow-primary" />
-                  )}
-                </span>
+                {link.label}
               </button>
             ))}
+          </nav>
+
+          {/* Mobile CTA - Single Button at Bottom */}
+          <div className="pt-6 border-t border-line">
+            <button
+              onClick={() => scrollToSection('#contact')}
+              className="w-full py-3 bg-primary text-bg-primary font-semibold rounded-xl hover:bg-primary-light transition-colors flex items-center justify-center gap-2"
+            >
+              {t('nav_contact') || 'Contact Me'}
+              <ArrowRight className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
+            </button>
           </div>
-        </nav>
+        </div>
       </div>
     </>
   );
