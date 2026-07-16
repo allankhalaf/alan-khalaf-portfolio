@@ -1,0 +1,46 @@
+/* ============================================
+   FOOTER FINAL CSS FIXES
+   ============================================ */
+
+/* Hide any duplicate scroll to top buttons */
+button.fixed.bottom-6 ~ button.fixed.bottom-6,
+button.fixed[style*="bottom"] ~ button.fixed[style*="bottom"] {
+  display: none !important;
+}
+
+/* Ensure RTL text direction */
+[dir="rtl"] footer {
+  direction: rtl;
+}
+
+/* Fix bottom bar text alignment */
+[dir="rtl"] footer .border-t .flex {
+  direction: rtl;
+}
+
+/* Fix copyright text */
+[dir="rtl"] footer .border-t p:first-child {
+  text-align: right;
+}
+
+/* Fix "Made with" text */
+[dir="rtl"] footer .border-t p:last-child {
+  text-align: left;
+}
+
+/* Social icons in RTL */
+[dir="rtl"] footer .flex.items-center.gap-3 {
+  flex-direction: row-reverse;
+}
+
+/* Contact items in RTL */
+[dir="rtl"] footer li a.inline-flex,
+[dir="rtl"] footer li div.inline-flex {
+  flex-direction: row-reverse;
+}
+
+/* Scroll button position in RTL */
+[dir="rtl"] button.fixed.bottom-6 {
+  right: auto !important;
+  left: 1.5rem !important;
+}

@@ -1,0 +1,239 @@
+/* ============================================
+   AGGRESSIVE SECTION GAPS FIX
+   Targets actual Tailwind classes
+   ============================================ */
+
+/* Reset ALL section spacing */
+section,
+.section,
+[id*="section"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  section,
+  .section,
+  [id*="section"] {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section,
+  .section,
+  [id*="section"] {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Remove my-*, mt-*, mb-* from sections */
+section[class*="my-"],
+section[class*="mt-"],
+section[class*="mb-"],
+section[class*="m-"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remove py-*, pt-*, pb-* from sections and replace with standard */
+section[class*="py-"],
+section[class*="pt-"],
+section[class*="pb-"],
+section[class*="p-"] {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  section[class*="py-"],
+  section[class*="pt-"],
+  section[class*="pb-"],
+  section[class*="p-"] {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section[class*="py-"],
+  section[class*="pt-"],
+  section[class*="pb-"],
+  section[class*="p-"] {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Fix gap-* in grids inside sections */
+section .gap-4,
+section .gap-6,
+section .gap-8,
+section .gap-10,
+section .gap-12,
+section .gap-16,
+section .gap-20,
+section .gap-24 {
+  gap: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  section .gap-4,
+  section .gap-6,
+  section .gap-8,
+  section .gap-10,
+  section .gap-12,
+  section .gap-16,
+  section .gap-20,
+  section .gap-24 {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Fix space-y-* in sections */
+section .space-y-2 > * + *,
+section .space-y-3 > * + *,
+section .space-y-4 > * + *,
+section .space-y-6 > * + *,
+section .space-y-8 > * + *,
+section .space-y-10 > * + *,
+section .space-y-12 > * + * {
+  margin-top: 0.75rem !important;
+}
+
+@media (min-width: 768px) {
+  section .space-y-2 > * + *,
+  section .space-y-3 > * + *,
+  section .space-y-4 > * + *,
+  section .space-y-6 > * + *,
+  section .space-y-8 > * + *,
+  section .space-y-10 > * + *,
+  section .space-y-12 > * + * {
+    margin-top: 1rem !important;
+  }
+}
+
+/* Fix space-x-* in sections */
+section .space-x-2 > * + *,
+section .space-x-3 > * + *,
+section .space-x-4 > * + *,
+section .space-x-6 > * + * {
+  margin-left: 0.5rem !important;
+  margin-right: 0 !important;
+}
+
+/* Fix min-h-screen on sections */
+section.min-h-screen,
+section[class*="min-h-"] {
+  min-height: auto !important;
+}
+
+/* ============================================
+   REMOVE DUPLICATE SECTIONS BY CONTENT
+   ============================================ */
+
+/* Hide sections that appear after identical sections */
+section:has(> * h2:contains("Development Services")) 
+  ~ section:has(> * h2:contains("Development Services")),
+section:has(> * [class*="title"]:contains("Development Services")) 
+  ~ section:has(> * [class*="title"]:contains("Development Services")),
+section:has(> * h2:contains("Translation Services")) 
+  ~ section:has(> * h2:contains("Translation Services")),
+section:has(> * [class*="title"]:contains("Translation Services")) 
+  ~ section:has(> * [class*="title"]:contains("Translation Services")) {
+  display: none !important;
+}
+
+/* ============================================
+   FIX CONTAINER SPACING
+   ============================================ */
+
+/* Remove extra top/bottom margins from containers inside sections */
+section .container:first-child,
+section [class*="container"]:first-child {
+  margin-top: 0 !important;
+}
+
+section .container:last-child,
+section [class*="container"]:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ============================================
+   FIX HEADING MARGINS
+   ============================================ */
+
+/* Standardize heading margins */
+section h2 {
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+section h3 {
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ============================================
+   FIX CARD/ITEM SPACING
+   ============================================ */
+
+/* Standardize card margins */
+section [class*="card"],
+section [class*="item"],
+section [class*="box"] {
+  margin-bottom: 1rem !important;
+}
+
+section [class*="card"]:last-child,
+section [class*="item"]:last-child,
+section [class*="box"]:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ============================================
+   HERO SECTION SPECIFIC
+   ============================================ */
+
+/* Reduce hero section bottom padding */
+section:first-of-type,
+section[class*="hero"],
+section[id*="hero"],
+section:has([class*="hero"]) {
+  padding-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  section:first-of-type,
+  section[class*="hero"],
+  section[id*="hero"],
+  section:has([class*="hero"]) {
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* ============================================
+   REMOVE EMPTY ELEMENTS BETWEEN SECTIONS
+   ============================================ */
+
+div:empty,
+span:empty,
+p:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+}
+
+/* Remove spacer/divider elements */
+[class*="spacer"],
+[class*="divider"],
+[class*="separator"],
+hr {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}

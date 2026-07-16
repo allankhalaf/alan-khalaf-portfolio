@@ -123,7 +123,8 @@ const translations = {
     project_7_text: "A responsive medical dashboard built with React and Tailwind CSS, designed to provide healthcare professionals with a comprehensive overview of patient data and clinical metrics.",
     project_8_tag: "TaskFlow",
     project_8_text: "A comprehensive web application for task and project management, built with React 19 and TanStack Query, offering a modern and responsive user interface to enhance team productivity.",
-
+     project_9_tag: "CycleCalc",
+    project_9_text: "Menstrual Cycle Calculator - CycleCalc is a modern, comprehensive Progressive Web App (PWA) for calculating and tracking menstrual cycles. It features an elegant UI inspired by Apple, Linear, and Vercel designs, with full bilingual support for Arabic and English.",
     // Experience
     experience_title: "My Experience",
     experience_subtitle: "Professional journey and achievements",
@@ -359,7 +360,8 @@ const translations = {
     project_7_text: "لوحة تحكم طبية متجاوبة مبنية باستخدام React و Tailwind CSS، وهي مصممة لتوفير نظرة شاملة لبيانات المرضى ومقاييس الرعاية الصحية للمختصين الطبيين.",
     project_8_tag: "TaskFlow",
     project_8_text: "تطبيق ويب متكامل لإدارة المهام والمشاريع، مبني باستخدام React 19 و TanStack Query و Tailwind CSS، ويقدم واجهة مستخدم حديثة ومتجاوبة لتحسين إنتاجية الفريق.",
-
+    project_9_tag:"CycleCalc",
+    project_9_text:"حاسبة الدورة الشهرية - CycleCalc هو تطبيق ويب تقدمي (PWA) حديث ومتكامل لحساب وتتبع الدورة الشهرية للنساء. صُمم التطبيق بواجهة مستخدم أنيقة مستوحاة من تصاميم Apple و Linear و Vercel، مع دعم كامل للغتين العربية والإنجليزية",
     // Experience
     experience_title: "خبراتي",
     experience_subtitle: "خبراتي مع المنظمات الدولية والإنسانية",

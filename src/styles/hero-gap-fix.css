@@ -1,0 +1,146 @@
+/* ============================================
+   HERO TO ABOUT SECTION GAP FIX
+   ============================================ */
+
+/* Remove ALL gaps between hero and next section */
+section:first-of-type,
+section[class*="hero"],
+section[id*="hero"],
+.hero-section,
+[class*="hero"]:not([class*="button"]):not([class*="btn"]) {
+  margin-bottom: 0 !important;
+  padding-bottom: 1rem !important;
+}
+
+/* The section immediately after hero */
+section:first-of-type + section,
+section[class*="hero"] + section,
+section[id*="hero"] + section,
+.hero-section + section,
+[class*="hero"] + section {
+  margin-top: 0 !important;
+  padding-top: 2rem !important;
+}
+
+/* Remove any empty elements between hero and about */
+section:first-of-type + div:empty,
+section:first-of-type + br,
+section[class*="hero"] + div:empty,
+section[class*="hero"] + br,
+section[id*="hero"] + div:empty,
+section[id*="hero"] + br {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix any spacer/divider between sections */
+section + [class*="spacer"],
+section + [class*="divider"],
+section + [class*="separator"],
+section + hr {
+  display: none !important;
+}
+
+/* ============================================
+   REDUCE HERO SECTION HEIGHT
+   ============================================ */
+
+/* Reduce min-height of hero */
+section:first-of-type,
+section[class*="hero"],
+section[id*="hero"] {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* Reduce padding inside hero */
+section:first-of-type .container,
+section:first-of-type [class*="container"],
+section[class*="hero"] .container,
+section[class*="hero"] [class*="container"],
+section[id*="hero"] .container,
+section[id*="hero"] [class*="container"] {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+/* Reduce margin on hero content */
+section:first-of-type h1,
+section:first-of-type h2,
+section:first-of-type p,
+section[class*="hero"] h1,
+section[class*="hero"] h2,
+section[class*="hero"] p,
+section[id*="hero"] h1,
+section[id*="hero"] h2,
+section[id*="hero"] p {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Reduce button group margin */
+section:first-of-type .flex.gap-4,
+section:first-of-type .flex.gap-6,
+section:first-of-type .flex.gap-8,
+section[class*="hero"] .flex.gap-4,
+section[class*="hero"] .flex.gap-6,
+section[class*="hero"] .flex.gap-8,
+section[id*="hero"] .flex.gap-4,
+section[id*="hero"] .flex.gap-6,
+section[id*="hero"] .flex.gap-8 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ============================================
+   FIX ABOUT SECTION TOP PADDING
+   ============================================ */
+
+/* Reduce top padding of about section */
+section:has(h2:contains("من أنا")),
+section:has(h2:contains("Who I Am")),
+section:has([class*="title"]:contains("من أنا")),
+section:has([class*="title"]:contains("Who I Am")),
+section[class*="about"],
+section[id*="about"] {
+  padding-top: 1rem !important;
+  margin-top: 0 !important;
+}
+
+/* ============================================
+   REMOVE ANIMATED/SCROLLING ELEMENTS GAPS
+   ============================================ */
+
+/* Fix scroll indicator spacing */
+[class*="scroll"],
+[class*="mouse"],
+[class*="scroll-down"],
+[class*="scroll-indicator"] {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remove extra space from animated elements */
+[class*="animate"],
+[class*="animation"],
+[class*="floating"] {
+  margin-bottom: 0 !important;
+}
+
+/* ============================================
+   GLOBAL SECTION SPACING RESET
+   ============================================ */
+
+/* All sections should have minimal spacing */
+section + section {
+  margin-top: 0 !important;
+}
+
+/* Remove any margin-top from first element in section */
+section > *:first-child,
+section .container > *:first-child,
+section [class*="container"] > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

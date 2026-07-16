@@ -1,0 +1,231 @@
+/* ============================================
+   SECTION GAPS FIX - Comprehensive
+   ============================================ */
+
+/* Reset all section margins and paddings */
+section {
+  margin: 0 !important;
+}
+
+/* Standardize section padding */
+section {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
+/* Remove extra margins from section containers */
+section .container,
+section .container-custom,
+section [class*="container"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Fix section headings spacing */
+section h2,
+section .section-title,
+section [class*="title"] {
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  section h2,
+  section .section-title,
+  section [class*="title"] {
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* Remove duplicate sections */
+/* If a section appears twice with same heading, hide the second one */
+section:has(h2:contains("Development Services")) ~ section:has(h2:contains("Development Services")),
+section:has(.section-title:contains("Development Services")) ~ section:has(.section-title:contains("Development Services")),
+section:has(h2:contains("Translation Services")) ~ section:has(h2:contains("Translation Services")),
+section:has(.section-title:contains("Translation Services")) ~ section:has(.section-title:contains("Translation Services")) {
+  display: none !important;
+}
+
+/* Fix gap between consecutive sections */
+section + section {
+  margin-top: 0 !important;
+}
+
+/* Remove any empty divs between sections */
+section + div:empty,
+div:empty + section {
+  display: none !important;
+}
+
+/* Fix card grids spacing */
+section .grid {
+  gap: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  section .grid {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Fix card margins */
+section .grid > div,
+section .grid > article,
+section [class*="card"] {
+  margin: 0 !important;
+}
+
+/* Fix timeline/experience items spacing */
+section [class*="timeline"] > div,
+section [class*="experience"] > div,
+section [class*="item"] {
+  margin-bottom: 1rem !important;
+}
+
+section [class*="timeline"] > div:last-child,
+section [class*="experience"] > div:last-child,
+section [class*="item"]:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Fix skills/progress bars spacing */
+section [class*="skill"] + [class*="skill"],
+section [class*="progress"] + [class*="progress"] {
+  margin-top: 0.75rem !important;
+}
+
+/* Fix service cards spacing */
+section [class*="service"] {
+  margin-bottom: 1rem !important;
+}
+
+/* Fix project cards spacing */
+section [class*="project"] {
+  margin-bottom: 1rem !important;
+}
+
+/* ============================================
+   SPECIFIC SECTION FIXES
+   ============================================ */
+
+/* Hero section - no extra bottom margin */
+section:first-of-type,
+section[class*="hero"],
+section[id*="hero"] {
+  padding-bottom: 3rem !important;
+}
+
+/* About section */
+section[class*="about"],
+section[id*="about"] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Education section */
+section[class*="education"],
+section[id*="education"] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Experience/Humanitarian section */
+section[class*="experience"],
+section[id*="experience"],
+section[class*="humanitarian"],
+section[id*="humanitarian"] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Skills section */
+section[class*="skills"],
+section[id*="skills"] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Services section */
+section[class*="services"],
+section[id*="services"] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Translation section */
+section[class*="translation"],
+section[id*="translation"] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Projects section */
+section[class*="projects"],
+section[id*="projects"] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Contact section */
+section[class*="contact"],
+section[id*="contact"] {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* ============================================
+   REMOVE DUPLICATE HEADINGS
+   ============================================ */
+
+/* Hide duplicate section headings */
+section h2:nth-of-type(2),
+section .section-title:nth-of-type(2) {
+  display: none !important;
+}
+
+/* ============================================
+   FIX MIN-HEIGHT ISSUES
+   ============================================ */
+
+/* Remove excessive min-height */
+section {
+  min-height: auto !important;
+}
+
+/* ============================================
+   FIX MARGIN COLLAPSE
+   ============================================ */
+
+/* Prevent margin collapse */
+section::before,
+section::after {
+  content: none !important;
+}
+
+/* ============================================
+   RESPONSIVE FIXES
+   ============================================ */
+
+@media (max-width: 640px) {
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  section .grid {
+    gap: 0.75rem !important;
+  }
+}

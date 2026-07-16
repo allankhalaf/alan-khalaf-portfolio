@@ -87,6 +87,17 @@ export const projects = [
     githubUrl: 'https://github.com/allankhalaf/TaskFlow',
     featured: false,
   },
+          {
+    id: 'CycleCalc',
+    title: 'menstrual-cycle-calculator',
+    tagKey: 'project_9_tag',
+    textKey: 'project_9_text',
+    image: './images/projects/menstrual-cycle-calculator.jpg',
+    tech: ['Framer Motion', 'Tailwind CSS', 'Vite', 'React 18', 'Lucide React'],
+    liveUrl: 'https://allankhalaf.github.io/menstrual-cycle-calculator//',
+    githubUrl: 'https://github.com/allankhalaf/menstrual-cycle-calculator',
+    featured: false,
+  },
 ];
 
 export const landingPages = [
